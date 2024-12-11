@@ -25,7 +25,7 @@ pip install black-and-white
 
 ## Usage
 
-```shell
+```txt
 usage: black-and-white [-h] [--config <config_path>] <path>
 
 The not that munch compromising Python code formatter
