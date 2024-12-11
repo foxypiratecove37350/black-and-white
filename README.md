@@ -16,7 +16,6 @@ consistent code style and allowing developers to tailor the formatting to their 
 * **Extensibility:** Easily add support for new language features or custom
   formatting rules.
 * **Performance:**  Efficiently formats even large codebases.
-* **Integration:** Seamless integration with popular IDEs and build systems.
 
 ## Installation
 
@@ -27,17 +26,23 @@ pip install black-and-white
 ## Usage
 
 ```shell
-black-and-white [path]
+usage: black-and-white [-h] [--config <config_path>] <path>
+
+The not that munch compromising Python code formatter
+
+positional arguments:
+  <path>                Path to the file or directory to format
+
+options:
+  -h, --help            show this help message and exit
+  --config, -c <config_path>
+                        Path to configuration file. Default to ./.black-and-white.toml. Use - for stdin
 ```
 
 ## Configuration
 
 Configuration options are specified via a configuration file (`.black-and-white.toml`).
-See the documentation for details on available options.
-
-## Contributing
-
-Contributions are welcome! Please see the contributing guidelines for details.
+See [`docs/configuration.md`] for details on available options.
 
 ## License
 
