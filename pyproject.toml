@@ -1,0 +1,31 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "black-and-white"
+description = "The not that munch compromising Python code formatter"
+readme = "README.md"
+requires-python = ">= 3.8" # Not tested currently
+authors = [
+	{name = "foxy pirate cove / Fnaf"}
+]
+keywords = ["black", "black-and-white", "formatting"]
+dynamic = ["version"]
+classifiers = [
+	"Development Status :: 3 - Alpha",
+	"Intended Audience :: Developers",
+	"License :: OSI Approved :: GNU General Public License v2.0 only (GPL-2.0)",
+	"Programming Language :: Python :: 3",
+]
+
+[project.urls]
+homepage = "https://github.com/foxypiratecove37350/black-and-white"
+repository = "https://github.com/foxypiratecove37350/black-and-white"
+documentation = "https://github.com/foxypiratecove37350/black-and-white/tree/main/docs"
+issues = "https://github.com/foxypiratecove37350/black-and-white/issues"
+changelog = "https://github.com/foxypiratecove37350/black-and-white/releases"
+releasenotes = "https://github.com/foxypiratecove37350/black-and-white/releases/latest"
+
+[project.scripts]
+black-and-white = "__init__:main"
