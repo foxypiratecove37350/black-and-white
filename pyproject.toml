@@ -15,9 +15,18 @@ dynamic = ["version"]
 classifiers = [
 	"Development Status :: 3 - Alpha",
 	"Intended Audience :: Developers",
-	"License :: OSI Approved :: GNU General Public License v2.0 only (GPL-2.0)",
+	"License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
 	"Programming Language :: Python :: 3",
 ]
+
+[tool.hatch.version]
+path = "src/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[tool.hatch.build.targets.sdist]
+packages = ["src"]
 
 [project.urls]
 homepage = "https://github.com/foxypiratecove37350/black-and-white"
@@ -28,4 +37,4 @@ changelog = "https://github.com/foxypiratecove37350/black-and-white/releases"
 releasenotes = "https://github.com/foxypiratecove37350/black-and-white/releases/latest"
 
 [project.scripts]
-black-and-white = "__init__:main"
+black-and-white = "src:main"
