@@ -1,7 +1,23 @@
+"""Black and White: The not that munch compromising Python code formatter
+
+Author: foxy pirate cove / Fnaf
+License: GNU General Public License v2.0 only (GPL-2.0)
+Version: 0.1.0
+
+CLI entrypoint
+"""
+
 from argparse import ArgumentParser, Namespace
 from pathlib import Path
 
 def main() -> None:
+	"""CLI entrypoint
+
+	CLI Arguments:
+		path (Path): Path to the file or directory to format
+		config (Path, optional): Path to configuration file. Defaults to Path('./.black-and-white.toml'). Use - for stdin
+	"""
+
 	arg_parser: ArgumentParser = ArgumentParser(
 		'black-and-white',
 		description='The not that munch compromising Python code formatter'
