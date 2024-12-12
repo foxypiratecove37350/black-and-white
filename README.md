@@ -26,7 +26,9 @@ pip install black-and-white
 ## Usage
 
 ```txt
-usage: black-and-white [-h] [--config <config_path>] <path>
+usage:
+          black-and-white [-h] [--version] [--config <config_path>] <path>
+python -m black_and_white [-h] [--version] [--config <config_path>] <path>
 
 The not that munch compromising Python code formatter
 
@@ -35,8 +37,10 @@ positional arguments:
 
 options:
   -h, --help            show this help message and exit
+  --version, -V         show program's version number and exit
   --config, -c <config_path>
-                        Path to configuration file. Default to ./.black-and-white.toml. Use - for stdin
+                        Path to configuration file. Default to ./.black-and-
+                        white.toml. Use - for stdin
 ```
 
 ## Configuration
