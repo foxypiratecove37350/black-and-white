@@ -42,7 +42,7 @@ options:
 ## Configuration
 
 Configuration options are specified via a configuration file (`.black-and-white.toml`).
-See [`docs/configuration.md`] for details on available options.
+See [`docs/configuration.md`](./docs/configuration.md) for details on available options.
 
 ## License
 
