@@ -11,6 +11,7 @@ from argparse import ArgumentParser, Namespace
 from pathlib import Path
 
 from .config import Config, parse_config
+from . import __version__
 
 
 def main() -> None:
@@ -24,6 +25,12 @@ def main() -> None:
 	arg_parser: ArgumentParser = ArgumentParser(
 		'black-and-white',
 		description='The not that munch compromising Python code formatter'
+	)
+	arg_parser.add_argument(
+		'--version',
+		'-V',
+		action='version',
+		version=f'Black and White v{__version__}'
 	)
 	arg_parser.add_argument(
 		'path',
