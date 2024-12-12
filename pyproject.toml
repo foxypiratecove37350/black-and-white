@@ -20,13 +20,7 @@ classifiers = [
 ]
 
 [tool.hatch.version]
-path = "src/__init__.py"
-
-[tool.hatch.build.targets.wheel]
-packages = ["src"]
-
-[tool.hatch.build.targets.sdist]
-packages = ["src"]
+path = "black_and_white/__init__.py"
 
 [project.urls]
 homepage = "https://github.com/foxypiratecove37350/black-and-white"
@@ -37,4 +31,4 @@ changelog = "https://github.com/foxypiratecove37350/black-and-white/releases"
 releasenotes = "https://github.com/foxypiratecove37350/black-and-white/releases/latest"
 
 [project.scripts]
-black-and-white = "src:main"
+black-and-white = "black_and_white:main"
