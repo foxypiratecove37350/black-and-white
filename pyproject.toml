@@ -6,7 +6,7 @@ build-backend = "hatchling.build"
 name = "black-and-white"
 description = "The not that munch compromising Python code formatter"
 readme = "README.md"
-requires-python = ">= 3.8" # Not tested currently
+requires-python = ">= 3.11" # Because of the use of tomllib
 authors = [
 	{name = "foxy pirate cove / Fnaf"}
 ]

@@ -10,6 +10,9 @@ CLI entrypoint
 from argparse import ArgumentParser, Namespace
 from pathlib import Path
 
+from .config import Config, parse_config
+
+
 def main() -> None:
 	"""CLI entrypoint
 
@@ -37,3 +40,4 @@ def main() -> None:
 		help='Path to configuration file. Default to ./.black-and-white.toml. Use - for stdin'
 	)
 	args: Namespace = arg_parser.parse_args()
+	config: Config = parse_config(args.config)
