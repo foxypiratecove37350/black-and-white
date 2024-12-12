@@ -4,7 +4,7 @@ Author: foxy pirate cove / Fnaf
 License: GNU General Public License v2.0 only (GPL-2.0)
 Version: 0.1.0
 
-Module entry point
+Module entrypoint
 """
 
 from .cli import main
