@@ -7,6 +7,8 @@ Version: 0.1.0
 Configuration management
 """
 
+import sys
+
 from enum import Enum
 from dataclasses import dataclass
 from pathlib import Path
@@ -95,7 +97,9 @@ def parse_config(config_file_path: Path) -> Config:
 
 	config_dict: dict = {}
 
-	if not config_file_path.is_file():
+	if config_file_path == '-':
+		config_dict = load(sys.stdin.buffer)
+	elif not config_file_path.is_file():
 		if (config_file_path.parent / '.black-and-white.toml').is_file():
 			config_file_path = (config_file_path.parent / '.black-and-white.toml')
 		elif (config_file_path.parent / 'pyproject.toml').is_file():
