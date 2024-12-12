@@ -1,7 +1,5 @@
 # Configuration - Black and White Documenation
 
-Black and White Configuration
-
 Black and White uses a TOML file for configuration. You can specify the path to this file using the
 `--config` flag. If no config file is specified, Black and White defaults to searching for
 `.black-and-white.toml` in the current directory. Alternatively, configurations can also be nested
