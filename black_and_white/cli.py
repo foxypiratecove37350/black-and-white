@@ -11,6 +11,7 @@ from argparse import ArgumentParser, Namespace
 from pathlib import Path
 
 from .config import Config, parse_config
+from .format import format_code
 from . import __version__
 
 
@@ -48,3 +49,5 @@ def main() -> None:
 	)
 	args: Namespace = arg_parser.parse_args()
 	config: Config = parse_config(args.config)
+	
+	format_code(args.path, config)
