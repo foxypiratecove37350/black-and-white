@@ -96,8 +96,9 @@ def parse_config(config_file_path: Path) -> Config:
 	"""
 
 	config_dict: dict = {}
+	config: dict = {}
 
-	if config_file_path == '-':
+	if config_file_path == Path('-'):
 		config_dict = load(sys.stdin.buffer)
 	elif not config_file_path.is_file():
 		if (config_file_path.parent / '.black-and-white.toml').is_file():
@@ -107,15 +108,14 @@ def parse_config(config_file_path: Path) -> Config:
 
 	try:
 		config_dict = load(config_file_path.open('rb'))
+		try:
+			if 'black-and-white' in config_dict.keys():
+				config = config_dict['black-and-white']
+			else:
+				config = config_dict['tool']['black-and-white']
+		except KeyError:
+			raise ValueError(f'\'{config_file_path}\' is not a Black and White configuration file')
 	except FileNotFoundError:
 		pass
-
-	try:
-		if 'black-and-white' in config_dict.keys():
-			config: dict = config_dict['black-and-white']
-		else:
-			config = config_dict['tool']['black-and-white']
-	except KeyError:
-		raise ValueError(f'\'{config_file_path}\' is not a Black and White configuration file')
 
 	return Config(**config)
