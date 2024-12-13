@@ -8,9 +8,3 @@ Version: 0.1.0
 __version__ = '0.1.0'
 __author__ = "foxy pirate cove / Fnaf"
 __license__ = "GPL-2.0"
-
-from .cli import main
-
-
-if __name__ == '__main__':
-	main()
