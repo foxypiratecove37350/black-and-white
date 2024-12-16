@@ -16,6 +16,7 @@ from itertools import chain
 from pathlib import Path
 
 from .config import Config
+from .parsing import Token, parse
 
 
 async def async_rglob(path: Path, pattern: str) -> Generator[Path, None, None]:
@@ -77,5 +78,10 @@ async def format_file(file_path: Path, config: Config) -> None:
 	"""
 
 	content: str = open(file_path, 'r', encoding='utf-8').read()
+
+	try:
+		parsed_content = parse(content)
+	except Exception as e:
+		raise e.__class__(f'File \'{file_path}\': {e}')
 
 	print(f'Formatted \'{file_path}\'')
