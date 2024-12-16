@@ -72,6 +72,10 @@ def lexing(content: str) -> list[Token]:
 
 			if c in '\t ' and content[i - 1] in '\r\n':
 				i += 1
+				
+				while content[i] in '\t ':
+					i += 1
+
 				... # Have to find the indent size to continue
 			elif c in '\t ':
 				i += 1
