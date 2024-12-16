@@ -16,6 +16,8 @@ from typing import Generic, TypeVar
 
 
 class TokenType(Enum):
+	"""Types of tokens"""
+	
 	KEYWORD: str = 'keyword'
 	IDENTIFIER: str = 'identifier'
 	OPERATOR: str = 'operator'
@@ -31,14 +33,36 @@ class TokenType(Enum):
 T = TypeVar('T')
 @dataclass
 class Token(Generic[T]):
+	"""Class to hold a token"""
+
 	type: TokenType
 	content: T
 
 	def __post_init__(self):
+		"""Validate the token
+		
+		Raises:
+			ValueError: If the token type is invalid
+
+		"""
+
 		if self.type not in TokenType:
 			raise ValueError(f'type must be in {[e.value for e in TokenType]}')
 
 def lexing(content: str) -> list[Token]:
+	"""Lexes the given content and returns a list of tokens
+
+	Args:
+		content (str): Content to lex
+
+	Returns:
+		list[Token]: List of tokens
+
+	Raises:
+		SyntaxError: If the content doesn't follow the Python syntax
+
+	"""
+
 	tokens: list[Token] = []
 	i: int = 0
 
@@ -47,6 +71,7 @@ def lexing(content: str) -> list[Token]:
 			c: str = content[i]
 
 			if c in '\t ' and content[i - 1] in '\r\n':
+				i += 1
 				... # Have to find the indent size to continue
 			elif c in '\t ':
 				i += 1
@@ -210,9 +235,8 @@ def lexing(content: str) -> list[Token]:
 
 				tokens.append(Token(TokenType.PUNCTUATION, c))
 			else:
-				print(f'Unexpected character {c!r}')
-				i += 1
-	except Exception as e:
+				raise SyntaxError(f'Unexpected character {c!r}')
+	except SyntaxError as e:
 		content_before: str = content[: i + 1]
 		ln: int = content_before.count('\n') + 1
 		col: int = len(content_before) - content_before.rfind('\n') - 1

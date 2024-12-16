@@ -7,25 +7,30 @@ Version: 0.1.0
 Configuration management
 """
 
-import sys
-
 from enum import Enum
 from dataclasses import dataclass
 from pathlib import Path
+from sys import stdin
 from tomllib import load
 
 
 class IndentType(Enum):
+	"""Types of indentation to use"""
+
 	TABS: str = 'tabs'
 	SPACES: str = 'spaces'
 
 
 class QuoteType(Enum):
+	"""Types of quotes to use"""
+
 	SINGLE: str = 'single'
 	DOUBLE: str = 'double'
 
 
 class EndOfLine(Enum):
+	"""Types of end of lines to use"""
+
 	LF: str = 'lf'
 	CRLF: str = 'crlf'
 	CR: str = 'cr'
@@ -99,7 +104,7 @@ def parse_config(config_file_path: Path) -> Config:
 	config: dict = {}
 
 	if config_file_path == Path('-'):
-		config_dict = load(sys.stdin.buffer)
+		config_dict = load(stdin.buffer)
 	elif not config_file_path.is_file():
 		if (config_file_path.parent / '.black-and-white.toml').is_file():
 			config_file_path = (config_file_path.parent / '.black-and-white.toml')
