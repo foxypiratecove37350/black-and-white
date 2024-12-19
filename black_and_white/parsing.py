@@ -1,4 +1,4 @@
-"""Black and White: The not that munch compromising Python code formatter
+"""Black and White: The not that much compromising Python code formatter
 
 Author: foxy pirate cove / Fnaf
 License: GNU General Public License v2.0 only (GPL-2.0)

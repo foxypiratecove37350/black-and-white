@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "black-and-white"
-description = "The not that munch compromising Python code formatter"
+description = "The not that much compromising Python code formatter"
 readme = "README.md"
 requires-python = ">= 3.11" # Because of the use of tomllib
 authors = [

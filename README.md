@@ -1,7 +1,7 @@
 <div align="center">
 	<img src="./logo.svg" alt="Black and White logo" width="100">
 	<h1>Black and White</h1>
-	<h3>The not that munch compromising Python code formatter</h3>
+	<h3>The not that much compromising Python code formatter</h3>
 </div>
 
 Black and White aims to provide a highly customizable Python code formatting
@@ -30,7 +30,7 @@ usage:
           black-and-white [-h] [--version] [--config <config_path>] <path>
 python -m black_and_white [-h] [--version] [--config <config_path>] <path>
 
-The not that munch compromising Python code formatter
+The not that much compromising Python code formatter
 
 positional arguments:
   <path>                Path to the file or directory to format
